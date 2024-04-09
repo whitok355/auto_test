@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "3ca25d56-c462-428b-865a-47d1ba32f6dc",
+		"name": "accuweather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25849888"
+	},
+	"item": [
+		{
+			"name": "GEt Admin Area List sc200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    jsonData.forEach(e => {",
+							"        for(const eKey in e){",
+							"            pm.expect(e[eKey]).not.eql(null)",
+							"        }",
+							"    })",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://dataservice.accuweather.com/locations/v1/adminareas/{{COUNTRY_CODE}}",
+					"protocol": "http",
+					"host": [
+						"dataservice",
+						"accuweather",
+						"com"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"adminareas",
+						"{{COUNTRY_CODE}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_KEY",
+			"value": "DLuQdZ5c6NjzEfRwTdLCnxig0Ob6C5Fr",
+			"type": "string"
+		},
+		{
+			"key": "COUNTRY_CODE",
+			"value": "RU",
+			"type": "string"
+		}
+	]
+}
