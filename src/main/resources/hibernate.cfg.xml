@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+
+        <property name="connection.url">jdbc:sqlite:fourseminar.db</property>
+        <mapping class="org.example.Client"/>
+        <mapping class="org.example.Credit"/>
+        <mapping class="org.example.Current"/>
+        <mapping class="org.example.Debit"/>
+        <mapping class="org.example.Employee"/>
+
+    </session-factory>
+</hibernate-configuration>
