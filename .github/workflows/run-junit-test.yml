@@ -3,7 +3,8 @@ run-name: ${{github.actor}} it testing CI GutHub Actions
 on: [push]
 
 jobs:
-    run-on: ubuntu-latest
+  run-tests:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 21
